@@ -63,7 +63,7 @@ snek16 = {
       s_len = s_len + 1
       food = food - 1
       if s_len > dget"42" then
-        s_winning = dget"43" ~= s_run_id and sfx"47" or true
+        if dget"43" ~= s_run_id then sfx"47" end
         dset(42,s_len)
         dset(43,s_run_id)
       end
@@ -79,7 +79,6 @@ snek16 = {
  --------------------- update --
  _update = function(self)
   t=t+1
-
   -- input
   s_pdir = s_ndir
   s_ndir =
@@ -107,7 +106,7 @@ snek16 = {
 ------------------------ draw --
  _draw = function(self)
   cls()
-  print("hiscore " .. dget"42", 1, 1, s_winning and 12 or 1)
+  print("hiscore " .. dget"42", 1, 1, dget"43" == s_run_id and 12 or 1)
   print("  score " .. s_len, 1, 7, 1)
 
   if s_done then
@@ -429,3 +428,4 @@ __music__
 00 41424344
 00 41424344
 00 41424344
+
