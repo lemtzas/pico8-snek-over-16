@@ -2,6 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 8
 __lua__
 
+cartdata"snekover16"
 snek16 = {
  name = "snek over 16",
  author = "lemtzas\nhiscore: " .. dget"42",
@@ -111,7 +112,7 @@ snek16 = {
 
   if s_done then
     if btn"4" or btn"5" then self:_init() end
-    print("— to restart", 37, 122, 8)
+    print("ï¿½ to restart", 37, 122, 8)
   end
 
   sspr(0,0,64,64,0,0,128,128)
@@ -428,4 +429,3 @@ __music__
 00 41424344
 00 41424344
 00 41424344
-
